@@ -1,5 +1,11 @@
-$ wget http://cu343l33nqaekrnw.onion/
 
+$ torify wget http://cu343l33nqaekrnw.onion/
+
+> byte stream in index.html
+
+$ torify wget http://cu343l33nqaekrnw.onion/
+
+> final file in index.html.2
 
 $ outguess -r onion1.jpg onion1.jpg.outguess
 
