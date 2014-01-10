@@ -7,6 +7,18 @@ $ torify wget http://cu343l33nqaekrnw.onion/
 
 > final file in index.html.2
 
+> hex dump and XOR with 0xFF
+
+$ dd if=onioninvert.bin of=onion1.jpg bs=1 skip=0 count=168876
+
+$ dd if=onioninvert.bin of=onion2.jpg bs=1 skip=168876 count=1476614
+
+$ dd if=onioninvert.bin of=onion3rev.jpg bs=1 skip=1645490 count=175159
+
+$ rev < onion3rev.jpg > onion3.jpg
+
+$ cat index.html.2 | tail -n +2 | xxd -r -p > out
+
 $ outguess -r onion1.jpg onion1.jpg.outguess
 
 $ gpg < onion1.jpg.outguess
