@@ -7,7 +7,7 @@ $ outguess -r 1033.jpg 1033.jpg.outguess
 
 $ gpg < 1033.jpg.outguess
 
-# decrypt RSA
+> decrypt RSA
 
-# http://cu343l33nqaekrnw.onion/
+> http://cu343l33nqaekrnw.onion/
 
