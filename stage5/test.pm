@@ -16,7 +16,6 @@ my @dec2    = map { hex($_) } @hex2;
 
 my @hex3    = ($string3301 =~ /(..)/g);
 my @dec3    = map { hex($_) } @hex3;
-my @rot3    = map { ( $_ + 3301 ) % 256 } @dec3;
 
 my @output;
 
