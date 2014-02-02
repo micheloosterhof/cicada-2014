@@ -1,5 +1,5 @@
 
-torify wget ut3qtzbrvs7dtvzp.onion
+torify wget http://ut3qtzbrvs7dtvzp.onion
 
 tail -n +2 index.html | xxd -r -p > index.bin
 
