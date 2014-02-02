@@ -13,3 +13,8 @@ outguess -r index.2.jpg  index.2.outguess
 outguess -r index.3.jpg  index.3.outguess
 outguess -r index.4.jpg  index.4.outguess
 
+gpgv < index.1.outguess
+gpgv < index.2.outguess
+gpgv < index.3.outguess
+gpgv < index.4.outguess
+
