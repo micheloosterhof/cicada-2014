@@ -6,6 +6,11 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 
+/*
+ * XOR TODO: accept stdin TODO: accept strings on command line TODO: wrap
+ * everything but the largest input 
+ */
+
 void
 usage(char *name)
 {
@@ -32,7 +37,9 @@ main(int argc, char *argv[])
     int             c,
                     index;
     char           *outputfile = NULL;
-    char *file1, *file2, *file3;
+    char           *file1,
+                   *file2,
+                   *file3;
 
     while ((c = getopt(argc, argv, "o:")) != -1)
 	switch (c) {
@@ -66,7 +73,7 @@ main(int argc, char *argv[])
     }
 
     if (outputfile == NULL) {
-	fprintf(stderr, "output to stdout\n" );
+	fprintf(stderr, "output to stdout\n");
 	fdo = 1;
     } else {
 	fprintf(stderr, "outputfile = %s\n", outputfile);
@@ -89,8 +96,7 @@ main(int argc, char *argv[])
 	perror("Can't determine file1 size");
 	exit(3);
     }
-    file1 =
-	mmap(NULL, st1.st_size, PROT_READ, MAP_SHARED, fd1, 0);
+    file1 = mmap(NULL, st1.st_size, PROT_READ, MAP_SHARED, fd1, 0);
     if (file1 == MAP_FAILED) {
 	perror("Can't map file1");
 	exit(4);
@@ -107,8 +113,7 @@ main(int argc, char *argv[])
 	perror("Can't determine file2 size");
 	exit(3);
     }
-    file2 =
-	mmap(NULL, st2.st_size, PROT_READ, MAP_SHARED, fd2, 0);
+    file2 = mmap(NULL, st2.st_size, PROT_READ, MAP_SHARED, fd2, 0);
     if (file2 == MAP_FAILED) {
 	perror("Can't map file2");
 	exit(4);
@@ -127,14 +132,12 @@ main(int argc, char *argv[])
 	    perror("Can't determine file3 size");
 	    exit(3);
 	}
-	file3 =
-	    mmap(NULL, st3.st_size, PROT_READ, MAP_SHARED, fd3, 0);
+	file3 = mmap(NULL, st3.st_size, PROT_READ, MAP_SHARED, fd3, 0);
 	if (file3 == MAP_FAILED) {
 	    perror("Can't map file3");
 	    exit(4);
 	}
     }
-
     // size1==size2 or exit
     if (fstat(fdo, &sto) == -1) {
 	perror("Can't determine fileo size");
@@ -172,11 +175,10 @@ main(int argc, char *argv[])
     munmap(file2, st2.st_size);
     close(fd2);
 
-    if ( ifiles > 2 ) {
-        munmap( file3, st3.st_size);
-        close(fd3);
+    if (ifiles > 2) {
+	munmap(file3, st3.st_size);
+	close(fd3);
     }
-
     // munmap(fileo, sto.st_size);
     close(fdo);
     return 0;
