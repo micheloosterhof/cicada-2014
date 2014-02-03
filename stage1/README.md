@@ -1,11 +1,21 @@
-$ wget https://twitter.com/1231507051321
+# Start of Cicada 2014
 
-$ wget i.imgur.com/zN4h51m.jpg 
+Start with the twee
 
-$ outguess -r zN4h51m.jpg zN4h51m.jpg.outguess
-Reading zN4h51m.jpg....
-Extracting usable bits:   29835 bits
-Steg retrieve: seed: 178, len: 1150
+	wget https://twitter.com/1231507051321
 
-$ gpg < zN4h51m.jpg.outguess
+Get the image
+
+	wget i.imgur.com/zN4h51m.jpg 
+
+Run outguess
+
+	outguess -r zN4h51m.jpg zN4h51m.jpg.outguess
+	Reading zN4h51m.jpg....
+	Extracting usable bits:   29835 bits
+	Steg retrieve: seed: 178, len: 1150
+
+Verify signature
+
+	gpg < zN4h51m.jpg.outguess
 
