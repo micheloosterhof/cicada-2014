@@ -1,1 +1,1 @@
-$ torify wget https://avowyfgl5lkzfj3n.onion/
+	torify wget https://avowyfgl5lkzfj3n.onion/
