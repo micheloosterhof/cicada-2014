@@ -1,13 +1,22 @@
+# Step two
 
-$ wget http://auqgnxjtvdbll3pv.onion
+Get onion data
 
-$ wget http://auqgnxjtvdbll3pv.onion/1033.jpg
+	wget http://auqgnxjtvdbll3pv.onion
 
-$ outguess -r 1033.jpg 1033.jpg.outguess
+Get the image
 
-$ gpg < 1033.jpg.outguess
+	wget http://auqgnxjtvdbll3pv.onion/1033.jpg
+
+Run outguess
+
+	outguess -r 1033.jpg 1033.jpg.outguess
+
+Verify signature
+
+	gpg < 1033.jpg.outguess
 
 > decrypt RSA
 
-> http://cu343l33nqaekrnw.onion/
+Result: http://cu343l33nqaekrnw.onion/
 
