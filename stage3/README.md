@@ -32,9 +32,9 @@ hex dump and XOR with 0xFF
 
 XOR all the three files together
 
-        ./xor onion1.bin onion2.bin onion1xor2.bin
-	./xor onion1xor2.bin onion3.bin onion.txt
-	rm onion1xor2.bin
+        make xor
+
+        ./xor -o xor.txt onion1.bin onion2.bin onion1xor2.bin
 
 	gpg < xor.txt
 
