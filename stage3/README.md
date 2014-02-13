@@ -22,17 +22,19 @@ hex dump and XOR with 0xFF
 
 	cat index.html.2 | tail -n +2 | xxd -r -p > out
 
-	outguess -r onion1.jpg onion1.jpg.outguess
-	outguess -r onion2.jpg onion2.jpg.outguess
-	outguess -r onion3.jpg onion3.jpg.outguess
+	outguess -r onion1.jpg onion1.outguess
+	outguess -r onion2.jpg onion2.outguess
+	outguess -r onion3.jpg onion3.outguess
 
-	gpg < onion1.jpg.outguess
-	gpg < onion2.jpg.outguess
-	gpg < onion3.jpg.outguess
+	gpg < onion1.outguess | xxd -r -p > onion1.bin
+	gpg < onion2.outguess | xxd -r -p > onion2.bin
+	gpg < onion3.outguess | xxd -r -p > onion3.bin
 
 XOR all the three files together
 
-	onion1.jpg.outguess XOR onion2.jpg.outguess XOR onion3.jpg.outguess
+        make xor
+
+        ./xor -o xor.txt onion1.bin onion2.bin onion1xor2.bin
 
 	gpg < xor.txt
 
