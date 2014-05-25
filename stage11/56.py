@@ -5,6 +5,7 @@
 n2g = { 0: 'F', 1: 'U', 2: 'TH', 3: 'O', 4: 'R', 5: 'C/K', 6: 'G', 7: 'W', 8: 'H', 9: 'N', 10: 'I', 11: 'J', 12: 'EO', 13: 'P', 14: 'X', 15: 'S/Z', 16: 'T', 17: 'B', 18: 'E', 19: 'M', 20: 'L', 21: 'NG/ING', 22: 'OE', 23: 'D', 24: 'A', 25: 'AE', 26: 'Y', 27: 'IA/IO', 28: 'EA' }
 
 skip = 56
+addition = 1
 
 def main():
     counter = 0
@@ -18,7 +19,7 @@ def main():
                 counter=counter+1
                 continue
             prime = primes.next();
-            print counter, ':', n2g[(((int(rune)-prime)) % 29 )+1]
+            print counter, ':', n2g[(rune-prime+addition) % 29]
             counter=counter+1
         else:
             print ":",rune,":"
