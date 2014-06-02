@@ -8,4 +8,5 @@ torify wget -r --mirror -S http://fv7lyucmeozzd5j4.onion >> log 2>&1
 torify wget -r --mirror -S http://avowyfgl5lkzfj3n.onion >> log 2>&1
 torify wget -r --mirror -S http://q4utgdi2n4m4uim5.onion >> log 2>&1
 torify wget -r --mirror -S http://ut3qtzbrvs7dtvzp.onion >> log 2>&1
+torify wget -r --mirror -S http://ky2khlqdf7qdznac.onion >> log 2>&1
 
